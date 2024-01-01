@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Dotenv = require("dotenv");
+const user_Route = require("./Route/Users_route.js");
+const signup = require("./Route/Auth.Route.js");
 
 Dotenv.config();
 mongoose
@@ -13,7 +15,11 @@ mongoose
   });
 
 const app = express();
+app.use(express.json());
 
 app.listen(3000, () => {
   console.log("the app is listening at port 3000!");
 });
+
+app.use("/api/v1/user", user_Route);
+app.use("/api/v1/auth", signup);
