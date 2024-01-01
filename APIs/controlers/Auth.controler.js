@@ -4,7 +4,6 @@ const bcryptjs = require("bcryptjs");
 const signup = async (req, res) => {
   const { username, email, password } = req.body;
 
-  // password hashing with bcrypt not implimented so, we would look at the code again
   const hashPassword = bcryptjs.hashSync(password, 10);
 
   const newUser = new User({ username, email, password: hashPassword });
