@@ -76,7 +76,7 @@ const SignUp = () => {
           </Link>
         </p>
 
-        <p className="text-red-700 mt-5">{error && "something whent wrong"}</p>
+        <p className="text-red-700 mt-5">{error && "something went wrong"}</p>
       </div>
     </div>
   )
