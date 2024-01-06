@@ -33,7 +33,6 @@ const signIn = async (req, res, next) => {
       .cookie("access_token", token, { httpOnly: true, expires: expiryDate })
       .status(200)
       .json(rest);
-    // .json({ validateUser });
   } catch (error) {
     next(error);
   }
